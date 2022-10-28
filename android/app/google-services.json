@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "816462291754",
+    "project_id": "notifications-957e2",
+    "storage_bucket": "notifications-957e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:816462291754:android:f745271572e1a0c3eeb453",
+        "android_client_info": {
+          "package_name": "com.cerone.notifications"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "816462291754-vst7q3egqv2u06749d05brj46qj7hlfs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cerone.notifications",
+            "certificate_hash": "f4dce09dc019db688f05e36fe3c7b16377933b32"
+          }
+        },
+        {
+          "client_id": "816462291754-3rk6k2ocmcjs6ah0sunrnm81v65rcf7r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkDHsfO2Z-fPaJqJTXT7-j7sBe9bDUx9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "816462291754-3rk6k2ocmcjs6ah0sunrnm81v65rcf7r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
