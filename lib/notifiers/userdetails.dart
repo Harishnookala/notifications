@@ -2,16 +2,25 @@ import 'package:flutter/material.dart';
 class UserDetailsProvider extends ChangeNotifier {
   TextEditingController nameController = TextEditingController();
   TextEditingController ageController = TextEditingController();
-  int _age = 0;
-  String _userName = '';
-  int get userAge => _age;
-  String get userName => _userName;
+
+  @override
+  void dispose() {
+    nameController.dispose();
+    ageController.dispose();
+    super.dispose();
+  }
+
+  List age =[];
+  List name = [];
+  List get userAge => age;
+  List get userName => name;
   void updateAge(int age) {
-    _age = age;
+    userAge.add(age);
     notifyListeners();
   }
   void updateName(String name) {
-    _userName = name;
+    userName.add(name);
     notifyListeners();
   }
+
 }

@@ -1,8 +1,7 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:notifications/Api/api.dart';
-import 'package:notifications/notifiers/decrement_Counter.dart';
+import 'package:notifications/notifiers/userdetails.dart';
 import 'package:provider/provider.dart';
+import 'check.dart';
 
 void main() => runApp(const MyApp());
 
@@ -16,19 +15,14 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Provider Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.amber,
-        ),
-        home: MyHomePage(title: 'Provider Demo Home Page'),
-      ),
+        home: MyHomePage(),
+      )
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key, this.title}) : super(key: key);
-  UserDetailsProvider item = UserDetailsProvider();
   final String? title;
   bool pressed = false;
   @override
@@ -36,81 +30,80 @@ class MyHomePage extends StatelessWidget {
     UserDetailsProvider userDetailsProvider =
         Provider.of<UserDetailsProvider>(context);
     final formKey = GlobalKey<FormState>();
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title!),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          SizedBox(
-            width: 450,
-            child: Form(
-              key: formKey,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  TextFormField(
-                      validator: (name) {
-                        if (name == null || name.isEmpty) {
-                          return 'Please enter name';
-                        }
-                        return null;
-                      },
-                      autofocus: true,
-                      controller: userDetailsProvider.nameController),
-                  TextFormField(
-                    autofocus: true,
-                    validator: (age) {
-                      if (age == null || age.isEmpty) {
-                        return "Please enter age";
-                      }
-                      return null;
-                    },
-                    controller: userDetailsProvider.ageController,
+    return MaterialApp(
+      color: Colors.purple,
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("jack and jill"),
+        ),
+        body: ListView(
+         shrinkWrap: true,
+          children: <Widget>[
+             Container(
+                margin: const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+                child: Form(
+                  key: formKey,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      TextFormField(
+                          validator: (name) {
+                            if (name == null || name.isEmpty) {
+                              return 'Please enter name';
+                            }
+                            return null;
+                          },
+                          autofocus: true,
+                          controller: userDetailsProvider.nameController),
+                      TextFormField(
+                        autofocus: true,
+                        validator: (age) {
+                          if (age == null || age.isEmpty) {
+                            return "Please enter age";
+                          }
+                          return null;
+                        },
+                        controller: userDetailsProvider.ageController,
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      TextButton(
+                          onPressed: () async {
+                            if (formKey.currentState!.validate()) {
+                              int age = int.parse(userDetailsProvider.ageController.text);
+                              String name = userDetailsProvider.nameController.text;
+                              userDetailsProvider.updateName(name);
+                              userDetailsProvider.updateAge(age);
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) =>  const Check()),
+                              );
+
+                            }
+                          },
+                          child: const Text("Submit")),
+                    ],
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  TextButton(
-                      onPressed: () async {
-                        if (formKey.currentState!.validate()) {
-                          int age = int.parse(userDetailsProvider.ageController.text);
-                          String name = userDetailsProvider.nameController.text;
-                          userDetailsProvider.updateName(name);
-                          userDetailsProvider.updateAge(age);
-                          pressed = true;
-                        }
-                      },
-                      child: const Text("Submit")),
-                ],
+                ),
               ),
-            ),
-          ),
-          pressed
-              ? Consumer<UserDetailsProvider>(
-                  builder: (context, provider, child) {
-                    return Column(
-                      children: [
-                        Text('Hi ,${provider.userName}',
-                          style: const TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),),
-                        Text('You are ${provider.userAge} years old',
-                          style: const TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ],
-                    );
-                  },
-                )
-              : Container()
-        ],
+              ListView.builder(
+                  shrinkWrap: true,
+                    itemCount: userDetailsProvider.userName.length,
+                    itemBuilder: (context,index){
+                      return Column(
+                        children: [
+                          Text(userDetailsProvider.userName[index]),
+                          Text(userDetailsProvider.userAge[index].toString()),
+                        ],
+                      );
+
+              }),
+
+          ],
+        ),
       ),
     );
   }

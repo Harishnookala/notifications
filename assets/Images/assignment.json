@@ -3,102 +3,122 @@
     {
       "name": "mango",
       "description": "this is seasonal fruit",
-      "quantity": "200"
+      "quantity": "200",
+      "price": "25"
     },
     {
       "name": "watermelon",
       "description": "this is fruit",
-      "quantity": "20"
+      "quantity": "20",
+      "price": "45"
     },
     {
       "name": "grapes",
       "description": "this is fruit",
-      "quantity": "200"
+      "quantity": "200",
+      "price": "30"
     },
     {
       "name": "pizza",
       "description": "this is junk food",
-      "quantity": "1"
+      "quantity": "1",
+      "price": "125"
     },
     {
       "name": "donut",
       "description": "this is junk food",
-      "quantity": "11"
+      "quantity": "11",
+      "price": "45"
     },
     {
       "name": "papaya",
       "description": "this is fruit",
-      "quantity": "2"
+      "quantity": "2",
+      "price": "25"
     },
     {
       "name": "blue-berry",
       "description": "this is fruit",
-      "quantity": "0"
+      "quantity": "3",
+      "price": "30"
     },
     {
-      "name": "straw$berry",
+      "name": "strawberry",
       "description": "this is fruit",
-      "quantity": "209"
+      "quantity": "209",
+      "price": "80"
     },
     {
       "name": "cucumber",
       "description": "this is cucumber healthy",
-      "quantity": "10"
+      "quantity": "10",
+      "price": "30"
     },
     {
       "name": "potato",
       "description": "this is vegetable",
-      "quantity": "2s"
+      "quantity": "2s",
+      "price": "25"
     },
     {
       "name": "beans",
       "description": "this is vegetable",
-      "quantity": "266"
+      "quantity": "266",
+      "price": "25"
     },
     {
       "name": "garlic",
       "description": "this is garlic m",
-      "quantity": "5"
+      "quantity": "5",
+      "price": "5"
     },
     {
       "name": "pumpkin",
       "description": "this is vegetable",
-      "quantity": "1"
+      "quantity": "1",
+      "price": "30"
     },
     {
       "name": "mint",
       "description": "this is mint fl",
-      "quantity": "211"
+      "quantity": "211",
+      "price": "10"
     },
     {
       "name": "spinach",
       "description": "this is good",
-      "quantity": "2"
+      "quantity": "2",
+      "price": "30"
     },
     {
       "name": "corn",
       "description": "this is super taste",
-      "quantity": "29"
+      "quantity": "29",
+      "price": "20"
     },
     {
       "name": "cauliflower",
       "description": "this is vegetable",
-      "quantity": "20"
+      "quantity": "20",
+      "price": "35"
     },
     {
       "name": "mirchi",
       "description": "this is vegetable",
-      "quantity": "24"
+      "quantity": "24",
+      "price": "5"
     },
     {
       "name": "sweet potato",
       "description": "this is sweet",
-      "quantity": "23"
+      "quantity": "23",
+      "price": "25"
     },
     {
       "name": "salad",
       "description": "Good in taste",
-      "quantity": "11"
+      "quantity": "11",
+      "price": "50"
     }
   ]
 }
