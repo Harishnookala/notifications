@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import 'notifiers/counter.dart';
-import 'main.dart';
+import 'notifiers/userdetails.dart';
 
 class check extends StatelessWidget {
   const check({Key? key}) : super(key: key);
@@ -10,9 +8,15 @@ class check extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:Consumer<Counter>(
-        builder: (context,counter,text){
-          return Text(counter.count.toString());
+      body:Consumer<UserDetailsProvider>(
+        builder: (context,user,text){
+          return Center(
+                child: Column(
+                  children: [
+                    Text(user.name.toString())
+                  ],
+                ),
+              );
         },
       )
     );

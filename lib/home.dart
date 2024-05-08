@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'Api/api.dart';
 import 'Model/products.dart';
-import 'main.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -131,10 +130,10 @@ class _HomeState extends State<Home> {
                                                     data.products![index].name);
                                               });
 
-                                              Navigator.push(
+                                           /*   Navigator.push(
                                                 context,
                                                 MaterialPageRoute(builder: (context) =>   MyHomePage()),
-                                              );
+                                              );*/
                                             },
                                             child: Container(
                                                 margin: const EdgeInsets.only(
